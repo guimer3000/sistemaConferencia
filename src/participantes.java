@@ -48,6 +48,7 @@ public class participantes extends javax.swing.JFrame {
         TextoEmail = new javax.swing.JLabel();
         EscribirEmail = new javax.swing.JTextField();
         BotonRegistrar = new javax.swing.JButton();
+        BotonConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
@@ -144,6 +145,14 @@ public class participantes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        BotonConsultar.setText("Consultar Inscritos");
+        BotonConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConsultarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 150, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,6 +291,14 @@ public class participantes extends javax.swing.JFrame {
         if(c<'0' || c>'9')evt.consume();        // TODO add your handling code here:
     }//GEN-LAST:event_EscribirEdadKeyTyped
 
+    private void BotonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarActionPerformed
+        this.dispose();
+        consultarUsuarios cu = new consultarUsuarios();
+        cu.setLocationRelativeTo(null);
+        cu.setVisible(true);
+
+    }//GEN-LAST:event_BotonConsultarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,6 +311,7 @@ public class participantes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonConsultar;
     private javax.swing.JButton BotonRegistrar;
     private javax.swing.JComboBox ElegirGenero;
     private javax.swing.JTextField EscribirCI;
